@@ -16,6 +16,7 @@ class ChapterDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityChapterDetailsBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
+        setSupportActionBar(viewBinding.toolBar)
 
         chapterIndex = intent.getIntExtra(Constants.ChapterIndex, 0)
         chapterTitle = intent.getStringExtra(Constants.ChapterTitle) ?: ""
@@ -38,8 +39,14 @@ class ChapterDetailsActivity : AppCompatActivity() {
 
     private fun initViews() {
         viewBinding.titleTv.text = chapterTitle
+        setTitle(null)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 
 }
