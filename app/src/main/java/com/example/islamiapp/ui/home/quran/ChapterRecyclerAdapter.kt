@@ -20,6 +20,18 @@ class ChapterRecyclerAdapter(private val chapterList:List<String>):RecyclerView.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val title = chapterList[position]
         holder.bind(title)
+        onItemClickListener?.let {listener ->
+            holder.itemView.setOnClickListener {
+                listener.onItemClick(title, position)
+            }
+        }
+    }
+
+    var onItemClickListener: OnItemClickListener? = null
+
+    //interface only without fun you can't use lambda
+    fun interface OnItemClickListener {
+        fun onItemClick(item: String, position: Int)
     }
 
     override fun getItemCount(): Int = chapterList.size

@@ -6,21 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ui.home.MainActivity">
+    tools:context=".ui.suraDetails.ChapterDetailsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/transparent">
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/transparent">
             <TextView
+                android:id="@+id/title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/islami"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
         </androidx.appcompat.widget.Toolbar>
@@ -29,6 +31,6 @@
 
     <include
         android:id="@+id/content"
-        layout="@layout/content_main"/>
+        layout="@layout/content_chapter_details"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
