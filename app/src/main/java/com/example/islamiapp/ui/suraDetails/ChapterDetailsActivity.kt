@@ -28,6 +28,12 @@ class ChapterDetailsActivity : AppCompatActivity() {
         val inputStream = assets.open("$chapterIndex.txt")
         val fileContent = inputStream.bufferedReader().use { it.readText() }
         val lines = fileContent.trim().split("\n")
+        initRecyclerView(lines)
+    }
+
+    private fun initRecyclerView(verses: List<String>) {
+        val adapter = VersesRecyclerAdapter(verses)
+        viewBinding.content.recyclerView.adapter = adapter
     }
 
     private fun initViews() {
