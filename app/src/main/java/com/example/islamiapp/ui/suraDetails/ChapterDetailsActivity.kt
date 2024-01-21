@@ -21,11 +21,19 @@ class ChapterDetailsActivity : AppCompatActivity() {
         chapterTitle = intent.getStringExtra(Constants.ChapterTitle) ?: ""
 
         initViews()
+        readSuraFile()
+    }
+
+    private fun readSuraFile() {
+        val inputStream = assets.open("$chapterIndex.txt")
+        val fileContent = inputStream.bufferedReader().use { it.readText() }
+        val lines = fileContent.trim().split("\n")
     }
 
     private fun initViews() {
-        viewBinding.titleTv.text=chapterTitle
+        viewBinding.titleTv.text = chapterTitle
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
 }
