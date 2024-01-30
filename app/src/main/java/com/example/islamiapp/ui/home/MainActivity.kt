@@ -24,40 +24,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        viewBinding
-            .content
+        viewBinding.content
             .bottomNav
-            .setOnItemReselectedListener { item ->
-            val fragment: Fragment = when (item.itemId) {
-                R.id.navigation_quran -> {
-                    QuranFragment()
-                }
+            .setOnItemSelectedListener { item ->
+                val fragment: Fragment = when (item.itemId) {
+                    R.id.navigation_quran -> {
+                        QuranFragment()
+                    }
 
-                R.id.navigation_hadeth -> {
-                    HadethFragment()
-                }
+                    R.id.navigation_hadeth -> {
+                        HadethFragment()
+                    }
 
-                R.id.navigation_sebha -> {
-                    TasbehFragment()
-                }
+                    R.id.navigation_sebha -> {
+                        TasbehFragment()
+                    }
 
-                R.id.navigation_radio -> {
-                    RadioFragment()
-                }
+                    R.id.navigation_radio -> {
+                        RadioFragment()
+                    }
 
-                else -> {
-                    QuranFragment()
+                    else -> {
+                        QuranFragment()
+                    }
                 }
+                pushFragment(fragment)
+                true
             }
-            Log.d("FragmentSwitch", "Switching to fragment: ${fragment.javaClass.simpleName}")
-            pushFragment(fragment)
-            true
-        }
-
-//        viewBinding
-//            .content
-//            .bottomNav
-//            .selectedItemId = R.id.navigation_quran
+        viewBinding.content.bottomNav
+            .selectedItemId = R.id.navigation_quran
     }
 
     private fun pushFragment(fragment: Fragment) {

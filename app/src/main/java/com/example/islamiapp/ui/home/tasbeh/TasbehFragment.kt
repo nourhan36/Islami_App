@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.islamiapp.databinding.FragmentTasbehBinding
 
 class TasbehFragment : Fragment() {
+
     lateinit var viewBinding: FragmentTasbehBinding
     override fun onCreateView(
         inflater: LayoutInflater,

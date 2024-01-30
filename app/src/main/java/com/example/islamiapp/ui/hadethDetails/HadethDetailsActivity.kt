@@ -11,10 +11,9 @@ import com.example.islamiapp.model.Hadeth
 import com.example.islamiapp.ui.Constants
 
 class HadethDetailsActivity : AppCompatActivity() {
-    lateinit var viewBinding : ActivityHadethDetailsBinding
+    lateinit var viewBinding: ActivityHadethDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("HadethDetailsActivity", "onCreate called")
         viewBinding = ActivityHadethDetailsBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
         extractParams()
@@ -36,6 +35,7 @@ class HadethDetailsActivity : AppCompatActivity() {
     }
 
     var hadeth: Hadeth? = null
+
     private fun extractParams() {
         //intent.getParcelableExtra(Constants.Hadeth_EXTRA , Hadeth::class.java)
         // -> requires API 33
@@ -46,6 +46,5 @@ class HadethDetailsActivity : AppCompatActivity() {
             intent.getParcelableExtra<Hadeth>(Constants.Hadeth_EXTRA)
             //don't take class and return object and cast it as hadeth
         }
-        Log.d("HadethDetailsActivity", "Received Hadeth: $hadeth")
     }
 }

@@ -11,6 +11,7 @@ import com.example.islamiapp.ui.Constants
 import com.example.islamiapp.ui.suraDetails.ChapterDetailsActivity
 
 class QuranFragment : Fragment() {
+
     lateinit var viewBinding: FragmentQuranBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,7 +27,7 @@ class QuranFragment : Fragment() {
         initChaptersRecycler()
     }
 
-    val chapters = listOf(
+    private val chapters = listOf(
         "الفاتحه",
         "البقرة",
         "آل عمران",
@@ -145,9 +146,10 @@ class QuranFragment : Fragment() {
     lateinit var adapter: ChapterRecyclerAdapter
     private fun initChaptersRecycler() {
         adapter = ChapterRecyclerAdapter(chapters)
-        adapter.onItemClickListener = ChapterRecyclerAdapter.OnItemClickListener { item, position ->
-            startSuraDetailsActivity(item, position)
-        }
+        adapter.onItemClickListener =
+            ChapterRecyclerAdapter.OnItemClickListener { item, position ->
+                startSuraDetailsActivity(item, position)
+            }
         viewBinding.chapterRecycler.adapter = adapter
     }
 

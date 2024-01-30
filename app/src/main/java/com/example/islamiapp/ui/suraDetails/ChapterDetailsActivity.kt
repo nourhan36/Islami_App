@@ -8,19 +8,18 @@ import com.example.islamiapp.databinding.ActivityChapterDetailsBinding
 import com.example.islamiapp.ui.Constants
 
 class ChapterDetailsActivity : AppCompatActivity() {
-
-    var chapterIndex: Int = 0;
+    var chapterIndex: Int = 0
     lateinit var chapterTitle: String
+
     lateinit var viewBinding: ActivityChapterDetailsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityChapterDetailsBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
         setSupportActionBar(viewBinding.toolBar)
-
         chapterIndex = intent.getIntExtra(Constants.ChapterIndex, 0)
         chapterTitle = intent.getStringExtra(Constants.ChapterTitle) ?: ""
-
         initViews()
         readSuraFile()
     }
@@ -48,5 +47,4 @@ class ChapterDetailsActivity : AppCompatActivity() {
         finish()
         return super.onSupportNavigateUp()
     }
-
 }

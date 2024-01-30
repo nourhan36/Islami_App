@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.islamiapp.databinding.FragmentRadioBinding
 
-class RadioFragment:Fragment() {
+class RadioFragment : Fragment() {
+
     lateinit var viewBinding: FragmentRadioBinding
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -7,7 +7,18 @@ import com.example.islamiapp.databinding.ItemChapterTitleBinding
 import com.example.islamiapp.databinding.ItemHadethTitleBinding
 import com.example.islamiapp.model.Hadeth
 
-class HadethRecyclerAdapter(private val hadethList:List<Hadeth>):RecyclerView.Adapter<HadethRecyclerAdapter.ViewHolder>() {
+class HadethRecyclerAdapter(private val hadethList: List<Hadeth>) :
+    RecyclerView.Adapter<HadethRecyclerAdapter.ViewHolder>() { // ktlint-disable max-line-length
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val hadeth = hadethList[position]
+        holder.bind(hadeth.title)
+        onItemClickListener?.let { listener ->
+            holder.itemView.setOnClickListener {
+                listener.onItemClick(hadeth, position)
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viewBinding: ItemHadethTitleBinding =
@@ -19,16 +30,7 @@ class HadethRecyclerAdapter(private val hadethList:List<Hadeth>):RecyclerView.Ad
         return ViewHolder(viewBinding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val hadeth = hadethList[position]
-        holder.bind(hadeth.title)
-        onItemClickListener?.let {listener ->
-            holder.itemView.setOnClickListener {
-                listener.onItemClick(hadeth, position)
-            }
-        }
-    }
-
+    override fun getItemCount(): Int = hadethList.size
     var onItemClickListener: OnItemClickListener? = null
 
     //interface only without fun you can't use lambda
@@ -36,12 +38,11 @@ class HadethRecyclerAdapter(private val hadethList:List<Hadeth>):RecyclerView.Ad
         fun onItemClick(item: Hadeth, position: Int)
     }
 
-    override fun getItemCount(): Int = hadethList.size
-    class ViewHolder(private val itemBinding: ItemHadethTitleBinding) :
-        RecyclerView.ViewHolder(itemBinding.root) {
+    class ViewHolder(private val itemBinding: ItemHadethTitleBinding) : RecyclerView.ViewHolder(
+        itemBinding.root
+    ) {
         fun bind(title: String) {
             itemBinding.title.text = title
         }
     }
-
 }
