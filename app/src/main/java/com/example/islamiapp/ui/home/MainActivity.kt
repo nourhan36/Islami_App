@@ -2,6 +2,7 @@ package com.example.islamiapp.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -48,14 +49,15 @@ class MainActivity : AppCompatActivity() {
                     QuranFragment()
                 }
             }
+            Log.d("FragmentSwitch", "Switching to fragment: ${fragment.javaClass.simpleName}")
             pushFragment(fragment)
             true
         }
 
-        viewBinding
-            .content
-            .bottomNav
-            .selectedItemId = R.id.navigation_quran
+//        viewBinding
+//            .content
+//            .bottomNav
+//            .selectedItemId = R.id.navigation_quran
     }
 
     private fun pushFragment(fragment: Fragment) {
