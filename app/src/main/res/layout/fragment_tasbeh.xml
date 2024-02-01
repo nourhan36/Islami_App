@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint_layout_tasbeh"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background">
@@ -18,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
-        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintHeight_percent=".1"
         app:layout_constraintWidth_percent=".3"
         android:src="@drawable/sebha_head"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +31,7 @@
         android:id="@+id/body_of_sebha_imv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="-32dp"
+        android:layout_marginTop="-24dp"
         android:src="@drawable/sebha_body"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".3"
@@ -45,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="@string/number_of_dhikr"
+        android:text="عدد التسبيحات"
         android:textSize="25sp"
         app:layout_constraintTop_toBottomOf="@id/body_of_sebha_imv" />
 
@@ -54,14 +55,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="0"
+        android:text="@string/_0"
         android:textStyle="bold"
         android:textSize="25sp"
+        android:padding="20dp"
+        android:background="@drawable/bg_counter"
         app:layout_constraintTop_toBottomOf="@id/number_of_dhikr_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         />
 
+    <TextView
+        android:id="@+id/dhikr_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="سبحان الله"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:padding="15dp"
+        android:background="@drawable/bg_dhikr"
+        app:layout_constraintTop_toBottomOf="@id/counter_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

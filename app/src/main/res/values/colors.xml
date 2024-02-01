@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primaryColor">#B7935F</color>
     <color name="transparent">#00000000</color>
+    <color name="counter_box_color">#91B7935F</color>
+    <color name="dhikr_box_color">@color/primaryColor</color>
 </resources>
