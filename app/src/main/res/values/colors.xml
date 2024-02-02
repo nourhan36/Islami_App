@@ -6,4 +6,10 @@
     <color name="transparent">#00000000</color>
     <color name="counter_box_color">#91B7935F</color>
     <color name="dhikr_box_color">@color/primaryColor</color>
+    <color name="titlesColor">@color/black</color>
+    <color name="itemVerseColor">@color/black</color>
+    <color name="islamiTitle">@color/black</color>
+    <color name="dhikrColor">@color/white</color>
+    <color name="lineSeparator">@color/primaryColor</color>
+    <color name="contentBG">#BFFFFFFF</color>
 </resources>

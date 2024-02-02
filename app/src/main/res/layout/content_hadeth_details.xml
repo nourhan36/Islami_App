@@ -10,6 +10,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardBackgroundColor="@color/contentBG"
         app:cardCornerRadius="12dp"
         app:cardElevation="12dp"
         app:contentPadding="8dp"
@@ -30,6 +31,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="21sp"
+                android:textColor="@color/itemVerseColor"
                 tools:text="@tools:sample/lorem/random" />
         </ScrollView>
     </androidx.cardview.widget.CardView>
